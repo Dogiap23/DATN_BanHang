@@ -35,8 +35,95 @@ import tuImg from "../ảnh và logo/Frame 612.png"
 
 import pannerImg from "../ảnh và logo/JBL_BOOMBOX_2_HERO_020_x1 (1) 1.png"
 
+import dogfoodImg from "../ảnh và logo/71RdoeXxtrL 1.png"
+import canonImg from "../ảnh và logo/eos-250d-03-500x500 1.png"
+import asusImg from "../ảnh và logo/ideapad-gaming-3i-01-500x500 1.png"
+import curologyImg from "../ảnh và logo/curology-j7pKVQrTUsM-unsplash 1.png"
+import kidcarImg from "../ảnh và logo/New-Mercedes-Benz-Gtr-Licensed-Ride-on-Car-Kids-Electric-Toy-Car 1.png"
+import soccerImg from "../ảnh và logo/Copa_Sense 1.png"
+import gamepadImg from "../ảnh và logo/GP11_PRD3 1.png"
+import jacketImg from "../ảnh và logo/698717_Z8A1X_3475_001_100_0000_Light-Reversible-quilted-satin-jacket 1.png"
+
+
   const HomePage = () => {
     
+    const products = [
+      {
+        id: 1,
+        name: "Breed Dry Dog Food",
+        price: "$100",
+        rating: 3,
+        reviews: 35,
+        image: dogfoodImg,
+        button: "Add To Cart",
+      },
+      {
+        id: 2,
+        name: "CANON EOS DSLR Camera",
+        price: "$360",
+        rating: 4,
+        reviews: 95,
+        image: canonImg,
+        button: "Add To Cart",
+      },
+      {
+        id: 3,
+        name: "ASUS FHD Gaming Laptop",
+        price: "$700",
+        rating: 5,
+        reviews: 325,
+        image: asusImg,
+        button: "Add To Cart",
+      },
+      {
+        id: 4,
+        name: "Curology Product Set",
+        price: "$500",
+        rating: 4,
+        reviews: 145,
+        image: curologyImg,
+        button: "Add To Cart",
+      },
+      {
+        id: 5,
+        name: "Kids Electric Car",
+        price: "$960",
+        rating: 5,
+        reviews: 65,
+        image: kidcarImg,
+        tag: "NEW",
+        button: "Add To Cart",
+      },
+      {
+        id: 6,
+        name: "Jr. Zoom Soccer Cleats",
+        price: "$1160",
+        rating: 3,
+        reviews: 35,
+        image: soccerImg,
+        button: "Add To Cart",
+      },
+      {
+        id: 7,
+        name: "GP11 Shooter USB Gamepad",
+        price: "$660",
+        rating: 5,
+        reviews: 55,
+        image: gamepadImg,
+        tag: "NEW",
+        button: "Add To Cart",
+      },
+      {
+        id: 8,
+        name: "Quilted Satin Jacket",
+        price: "$660",
+        rating: 4,
+        reviews: 55,
+        image: jacketImg,
+        button: "Add To Cart",
+      },
+    ];
+
   return (
     <div className="homepage-container">
       {/* Top Header */}
@@ -204,11 +291,11 @@ import pannerImg from "../ảnh và logo/JBL_BOOMBOX_2_HERO_020_x1 (1) 1.png"
 
       {/* Featured Products */}
       <section class="best-selling">
-  <div class="section-header">
+      <div class="section-header">
     <span class="section-icon"></span>
-    <h3>This Month</h3>
+    <h3 class="section-category">This Month</h3>
   </div>
-  <h2>Best Selling Products</h2>
+  <h2 class="section-title">Best Selling Products</h2>
   <div class="product-grid">
     <div class="product-card">
     <img src={aomuaImg} alt="AoMua" />
@@ -255,9 +342,29 @@ import pannerImg from "../ảnh và logo/JBL_BOOMBOX_2_HERO_020_x1 (1) 1.png"
   </div>
 </section>
 
-<section>
-  
-</section>
+<section className="best-selling">
+      <h3 className="section-title">Our Products</h3>
+      <h2>Explore Our Products</h2>
+      <div className="product-grid">
+        {products.map((product) => (
+          <div key={product.id} className="product-card">
+            {product.tag && <span className="tag">{product.tag}</span>}
+            <img src={product.image} alt={product.name} className="product-image" />
+            {product.button ? (
+              <button className="add-to-cart">{product.button}</button>
+            ) : null}
+            <h4>{product.name}</h4>
+            <p className="price">{product.price}</p>
+            <div className="rating">
+              {"⭐".repeat(product.rating)}
+              {"☆".repeat(5 - product.rating)}
+              <span className="reviews"> ({product.reviews})</span>
+            </div>
+          </div>
+        ))}
+      </div>
+      <button className="view-all">View All Products</button>
+    </section>
 
       {/* Footer */}
       <footer className="footer">
