@@ -1,0 +1,34 @@
+.top-header {
+  background-color: black;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px 20px;
+  border-top: 3px solid purple;
+  font-size: 14px;
+  position: relative;
+}
+
+.top-header p {
+  margin: 0;
+}
+
+.shop-now {
+  font-weight: bold;
+  margin-left: 5px;
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+}
+
+.language-selector {
+  position: absolute;
+  right: 20px;
+  background: none;
+  border: none;
+  color: white;
+  font-size: 14px;
+  cursor: pointer;
+}
