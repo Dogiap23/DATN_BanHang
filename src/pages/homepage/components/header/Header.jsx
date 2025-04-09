@@ -1,5 +1,8 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import "./Header.css";
+import { FaSearch, FaHeart, FaShoppingCart } from "react-icons/fa";
+
 
 const Header = () => {
   return (
@@ -20,16 +23,16 @@ const Header = () => {
         <nav>
           <ul className="nav-links">
             <li>
-              <a href="#">Home</a>
+              <a href="/">Home</a>
             </li>
             <li>
               <a href="#">Contact</a>
             </li>
             <li>
-              <a href="#">About</a>
+              <Link to="/about">About</Link>
             </li>
             <li>
-              <a href="#">Sign Up</a>
+              <Link to="/signup">Sign Up</Link>
             </li>
           </ul>
         </nav>

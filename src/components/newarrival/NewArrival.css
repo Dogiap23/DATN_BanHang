@@ -1,64 +1,106 @@
+.new-arrival {
+  margin: 40px 0;
+}
+
+.section-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.section-header .section-icon {
+  background-color: #e63946;
+  width: 10px;
+  height: 20px;
+  border-radius: 3px;
+}
+
+.section-category {
+  font-size: 1rem;
+  font-weight: bold;
+  color: red;
+  text-transform: uppercase;
+}
+
+.section-title {
+  font-size: 2rem;
+  font-weight: bold;
+  margin: 10px 0 20px;
+}
+
 .arrival-content {
-    display: grid;
-    grid-template-columns: 2fr 1fr;
-    gap: 20px;
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  grid-template-rows: auto auto;
+  gap: 20px;
+  align-items: stretch;
 }
 
 .product-box {
-    background: #f9f9f9;
-    padding: 20px;
-    border-radius: 10px;
-    text-align: center;
-    position: relative;
-    overflow: hidden;
+  background: #f9f9f9;
+  border-radius: 10px;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 20px;
+  text-align: left;
+  height: 100%;
 }
 
 .product-box.large {
-    background-color: #333;
-    grid-column: span 2;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  grid-column: span 2;
+  grid-row: span 2;
+  background-color: #000;
+  color: white;
 }
 
 .product-box img {
-    max-width: 100%;
-    border-radius: 10px;
-    object-fit: cover;
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px;
+  object-fit: cover;
 }
 
 .product-info {
-    position: absolute;
-    bottom: 20px;
-    left: 20px;
-    color: white;
-    text-align: left;
+  position: relative;
+  z-index: 2;
 }
 
 .product-info h3 {
-    font-size: 1.5rem;
-    margin: 10px 0;
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin: 10px 0;
 }
 
 .product-info p {
-    font-size: 1rem;
-    margin-bottom: 10px;
+  font-size: 1rem;
+  margin-bottom: 10px;
+  color: #666;
 }
 
+.product-box.large .product-info p {
+  color: white;
+}
+
+
 .shop-now {
-    color: white;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background 0.3s;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: bold;
+  transition: background 0.3s;
 }
 
 .shop-now:hover {
-    background: #555;
+  background: #666;
 }
 
 .dark-bg {
-    background: #333;
-    color: white;
+  background: #333;
+  color: white;
 }
